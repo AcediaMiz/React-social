@@ -1,0 +1,16 @@
+.navigation {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  background: rgba(15, 179, 42, 0.5);
+}
+.list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+.item {
+  margin-bottom: 15px;
+}
+.link {
+  text-align: center;
+}

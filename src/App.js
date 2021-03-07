@@ -1,14 +1,17 @@
 import "./App.css";
-import Header from "./components/Header";
-import Navigation from "./components/Navigation";
-import Profile from "./components/Profile";
+import Dialogs from "./components/Dialogs/Dialogs";
+import Header from "./components/Header/Header";
+import Navigation from "./components/Navigation/Navigation";
+import Profile from "./components/Profile/Profile";
 
 const App = () => {
   return (
     <div className="App">
       <Header></Header>
       <Navigation></Navigation>
-      <Profile />
+      <section className="App__content">
+        <Dialogs></Dialogs>
+      </section>
     </div>
   );
 };
