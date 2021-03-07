@@ -10,10 +10,13 @@ const Navigation = () => {
           <a href="/dialogs">Messages</a>
         </li>
         <li className={s.item}>
-          <a href="">News</a>
+          <a href="/news">News</a>
         </li>
         <li className={s.item}>
-          <a href="">Music</a>
+          <a href="/music">Music</a>
+        </li>
+        <li className={s.item}>
+          <a href="/settings">Settings</a>
         </li>
       </ul>
     </nav>
