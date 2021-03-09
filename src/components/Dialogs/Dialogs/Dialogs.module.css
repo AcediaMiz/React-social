@@ -1,0 +1,22 @@
+.dialogs {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+.chats {
+  border: 1px solid #eaeaea;
+}
+.list {
+  list-style-type: none;
+}
+.title {
+  border-bottom: 1px solid #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80px;
+}
+.messages {
+}

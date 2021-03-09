@@ -1,12 +1,14 @@
 import "./App.css";
-import Dialogs from "./components/Dialogs/Dialogs";
+
 import Header from "./components/Header/Header";
 import Navigation from "./components/Navigation/Navigation";
-import Profile from "./components/Profile/Profile";
+
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Music from "./components/Music/Music";
+import Groups from "./components/Groups/Groups";
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
+import Profile from "./components/Profile/Profile/Profile";
+import Dialogs from "./components/Dialogs/Dialogs/Dialogs";
 
 const App = () => {
   return (
@@ -18,7 +20,7 @@ const App = () => {
           <Route path="/dialogs" component={Dialogs}></Route>
           <Route path="/profile" component={Profile}></Route>
           <Route path="/news" component={News}></Route>
-          <Route path="/music" component={Music}></Route>
+          <Route path="/groups" component={Groups}></Route>
           <Route path="/settings" component={Settings}></Route>
         </section>
       </div>
