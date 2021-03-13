@@ -1,7 +1,6 @@
 .navigation {
   grid-column-start: 1;
   grid-column-end: 2;
-  border-bottom: 1px solid #eaeaea;
 }
 .list {
   margin-top: 15px;
@@ -9,6 +8,7 @@
   display: flex;
   flex-direction: column;
   padding: 0 13px;
+  border-bottom: 1px solid #eaeaea;
 }
 .item {
   height: 50px;
@@ -30,6 +30,7 @@
   padding: 11px 12px;
   font-size: 16px;
   height: 50px;
+  transition: 0.3s ease;
 }
 .link:hover {
   background-color: #f1f3f4;

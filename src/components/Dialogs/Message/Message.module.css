@@ -1,3 +1,58 @@
+.wrapper {
+  display: flex;
+}
+.wrapper.true {
+  align-self: flex-end;
+}
+.wrapper.false {
+  align-self: flex-start;
+  position: relative;
+}
+.wrapper img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+.wrapper.false img {
+  position: absolute;
+  left: 0;
+}
 .message {
-  margin: 8px;
+  min-height: 40px;
+  max-width: 400px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  border-radius: 5px;
+  position: relative;
+  line-height: 20px;
+}
+
+.wrapper .true {
+  background: #2a41e8;
+  color: white;
+  margin-right: 15px;
+}
+.wrapper .true::after {
+  content: "";
+  position: absolute;
+  right: -13px;
+
+  border: 7px solid transparent;
+  border-left: 7px solid #2a41e8;
+}
+.wrapper .false {
+  background: #cac8c8;
+  color: #666;
+  margin-left: 65px;
+}
+.wrapper .false::after {
+  content: "";
+  position: absolute;
+  left: -13px;
+
+  border: 7px solid transparent;
+  border-right: 7px solid #cac8c8;
 }

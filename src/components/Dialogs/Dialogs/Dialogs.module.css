@@ -19,4 +19,40 @@
   height: 80px;
 }
 .messages {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.wrapper {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-end;
+}
+.text {
+  width: 100%;
+  min-height: 70px;
+  max-height: 200px;
+  border-top: 1px solid #eaeaea;
+  padding: 40px;
+  display: flex;
+}
+.textarea {
+  height: 100%;
+  border: none;
+  font-size: 20px;
+  width: 100%;
+}
+.send {
+  margin-left: 15px;
+  background-color: #2a41e8;
+  border: none;
+  width: 100px;
+  height: 45px;
+  border-radius: 4px;
+  color: white;
+  text-transform: capitalize;
+
+  font-size: 15px;
 }

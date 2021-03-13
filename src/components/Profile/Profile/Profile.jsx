@@ -3,12 +3,13 @@ import ProfileInfo from "../ProfileInfo/ProfileInfo";
 
 import s from "./Profile.module.css";
 
-const Profile = () => {
+const Profile = (props) => {
   return (
     <div className={s.profile}>
       <ProfileInfo></ProfileInfo>
-      <Posts></Posts>
+      <Posts dispatch={props.dispatch} data={props.data}></Posts>
     </div>
   );
 };
+
 export default Profile;
