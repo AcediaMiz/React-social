@@ -11,6 +11,7 @@ import Profile from "./components/Profile/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs/Dialogs";
 
 const App = (props) => {
+  debugger;
   return (
     <Router>
       <div className="App">

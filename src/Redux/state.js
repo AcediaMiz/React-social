@@ -1,6 +1,6 @@
-const ADD_POST = "ADD-POST";
-const CHANGE_TEXT = "CHANGE-TEXT";
-const SEND_MESSAGE = "SEND_MESSAGE";
+import dialogsReduser from "./Redusers/dialogsReduser";
+import profileReduser from "./Redusers/profileReduser";
+
 let store = {
   _state: {
     dialogsPage: {
@@ -53,6 +53,7 @@ let store = {
           img: "https://i.redd.it/37qu0i34fsl01.jpg",
         },
       ],
+      messageArea: "",
     },
     profilePage: {
       posts: [
@@ -65,7 +66,6 @@ let store = {
     },
   },
 
-  sendMessage(text) {},
   call() {
     console.log("sdfsd");
   },
@@ -76,47 +76,11 @@ let store = {
     return this._state;
   },
   dispatch(action) {
-    //{ type:'ADD-POST'}
-    if (action.type === ADD_POST) {
-      let newPost = {
-        id: 5,
-        text: this._state.profilePage.newText,
-        likes: 0,
-      };
-      this._state.profilePage.posts.push(newPost);
-      this.call();
-      this._state.profilePage.newText = "";
-    } else if (action.type === CHANGE_TEXT) {
-      this._state.profilePage.newText = action.text;
-      this.call();
-    } else if (action.type === SEND_MESSAGE) {
-      let newMessage = {
-        id: 1,
-        text: action.text,
-        isUser: true,
-        img:
-          "https://ranbus.fra1.cdn.digitaloceanspaces.com/ranbus/media/images/2020/05/23/1590240603_iavvKTvmzW.jpg",
-      };
-      this._state.dialogsPage.messages.push(newMessage);
-      this.call();
-    }
+    this._state.profilePage = profileReduser(action, this._state.profilePage);
+    this._state.dialogsPage = dialogsReduser(action, this._state.dialogsPage);
+    this.call();
   },
 };
-export const addPostActionCreater = () => ({
-  type: ADD_POST,
-});
-export const changeTextActionCreator = (text) => ({
-  type: CHANGE_TEXT,
-  text,
-});
-export const sendMessageActionCreator = (text) => {
-  return {
-    type: SEND_MESSAGE,
-    text,
-  };
-};
-
-window.store = store;
-let liza =
+const liza =
   "Я люблю Лизу очень сильно я отдам ей все свои деньги и свое сердце. Михаил Ковальчук. Это нотариально заверенная расписка. Лиза, забирай мои деньги. Мое сердце и душа уже твои.";
 export default store;
