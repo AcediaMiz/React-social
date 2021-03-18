@@ -27,24 +27,22 @@
   padding: 40px;
   display: flex;
   flex-direction: column;
+
   justify-content: flex-end;
 }
 .text {
   width: 100%;
-  box-sizing: border-box;
-
-  height: 200px;
+  min-height: 70px;
+  max-height: 200px;
   border-top: 1px solid #eaeaea;
   padding: 40px;
   display: flex;
-  justify-content: space-between;
 }
 .textarea {
   height: 100%;
-  width: 100%;
   border: none;
   font-size: 20px;
-  resize: none;
+  width: 100%;
 }
 .send {
   margin-left: 15px;

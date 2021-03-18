@@ -1,22 +1,16 @@
 import React from "react";
-import {
-  addPostActionCreater,
-  changePostTextCreator,
-} from "../../../Redux/Redusers/profileReduser";
 
 import Post from "../Post/Post";
 import s from "./Posts.module.css";
 
 const Posts = (props) => {
-  let posts = [...props.data.posts].reverse();
   let textarea = React.createRef();
   let addPost = () => {
-    props.dispatch(addPostActionCreater());
+    props.addPost();
   };
   let onChange = () => {
     let text = textarea.current.value;
-
-    props.dispatch(changePostTextCreator(text));
+    props.textChange(text);
   };
 
   return (
@@ -38,10 +32,9 @@ const Posts = (props) => {
       </div>
 
       <div className="post">
-        {posts.map((item) => (
-          <Post message={item.text} likes={item.likes} id={item.id}></Post>
+        {props.posts.map((item) => (
+          <Post message={item.text} likes={item.likes} key={item.id}></Post>
         ))}
-        }
       </div>
     </div>
   );

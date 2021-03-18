@@ -7,5 +7,5 @@ let reduserJoin = combineReducers({
 });
 
 let store = createStore(reduserJoin);
-
+window.store = store;
 export default store;

@@ -6,8 +6,8 @@ let initialState = {
     { id: 2, name: "Dima" },
     { id: 3, name: "Lesha" },
     { id: 4, name: "Liza" },
-    { id: 4, name: "Michael" },
-    { id: 5, name: "Muhammad" },
+    { id: 5, name: "Michael" },
+    { id: 6, name: "Muhammad" },
   ],
   messages: [
     {
@@ -54,33 +54,41 @@ let initialState = {
 };
 const dialogsReduser = (state = initialState, action) => {
   switch (action.type) {
-    case SEND_MESSAGE:
-      let newMessage = {
-        id: 1,
-        text: action.text,
-        isUser: true,
-        img:
-          "https://ranbus.fra1.cdn.digitaloceanspaces.com/ranbus/media/images/2020/05/23/1590240603_iavvKTvmzW.jpg",
+    case SEND_MESSAGE: {
+      return {
+        ...state,
+        messageArea: "",
+        messages: [
+          ...state.messages,
+          {
+            id: state.messages.length + 1,
+            text: state.messageArea,
+            isUser: true,
+            img:
+              "https://ranbus.fra1.cdn.digitaloceanspaces.com/ranbus/media/images/2020/05/23/1590240603_iavvKTvmzW.jpg",
+          },
+        ],
       };
-      state.messages.push(newMessage);
+    }
 
-      state.messageArea = "";
-      break;
     case CHANGE_MESSAGE_TEXT:
-      state.messageArea = action.text;
-      break;
+      return {
+        ...state,
+        messageArea: action.text,
+      };
+
+    default:
+      return state;
   }
-  return state;
 };
 export const changeMessageTextCreator = (text) => ({
   type: CHANGE_MESSAGE_TEXT,
   text,
 });
 
-export const sendMessageActionCreator = (text) => {
+export const sendMessageActionCreator = () => {
   return {
     type: SEND_MESSAGE,
-    text,
   };
 };
 export default dialogsReduser;

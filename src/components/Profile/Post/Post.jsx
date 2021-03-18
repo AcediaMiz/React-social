@@ -1,7 +1,9 @@
+import React from "react";
 import s from "./Post.module.css";
 
 const Post = (props) => {
   let { message, likes } = props;
+
   return (
     <div className={s.post}>
       <div className={s.user}>
@@ -15,7 +17,13 @@ const Post = (props) => {
 
       <p className={s.text}>{message}</p>
 
-      <div className={s.likes}>likes: {likes}</div>
+      <div className={s.likes}>
+        <img
+          src="https://raw.githubusercontent.com/AcediaMiz/React-social/afe1ee2fb5cb7ac8e0d766600fbb4d50f863d7b2/src/like.svg"
+          alt=""
+        />
+        {likes}
+      </div>
     </div>
   );
 };
