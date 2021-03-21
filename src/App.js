@@ -7,8 +7,9 @@ import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
 import Profile from "./components/Profile/Profile/Profile";
 import DialogsContainer from "./components/Dialogs/DialogsContainer/DialogsContainer";
+import UsersContainer from "./components/Users/UsersContainer/UsersContainer";
 
-const App = (props) => {
+const App = () => {
   return (
     <Router>
       <div className="App">
@@ -22,6 +23,10 @@ const App = (props) => {
           <Route path="/profile" render={() => <Profile></Profile>}></Route>
           <Route path="/news" component={News}></Route>
           <Route path="/groups" component={Groups}></Route>
+          <Route
+            path="/users"
+            render={() => <UsersContainer></UsersContainer>}
+          ></Route>
           <Route path="/settings" component={Settings}></Route>
         </section>
       </div>

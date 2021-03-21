@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import s from "./Navigation.module.css";
-import home from "./../../home.svg";
+
 const Navigation = () => {
   return (
     <nav className={s.navigation}>
@@ -73,6 +73,24 @@ const Navigation = () => {
               ></path>
             </svg>
             Settings
+          </NavLink>
+        </li>
+        <li className={s.item}>
+          <NavLink activeClassName={s.active} className={s.link} to="/users">
+            <svg
+              fill="#e76cc2"
+              stroke="#e76cc2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+              ></path>
+            </svg>
+            Users
           </NavLink>
         </li>
       </ul>

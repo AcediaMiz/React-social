@@ -47,4 +47,5 @@
 }
 .link.active svg {
   fill: white;
+  stroke: white;
 }
